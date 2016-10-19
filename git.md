@@ -1,0 +1,109 @@
+###git use 
+
+####长期存储密码：
+```sh
+git config --global credential.helper store
+```
+
+##git 命令使用技巧
+###1.如果使用htts协议，需要执行初始化命令,并保存账号密码
+```sh
+//保存账号密码 
+git config --global credential.helper store 
+//取消ssl验证 
+git config --global http.sslVerify false 
+//忽略文件夹权限 
+git config core.filemode false
+```
+
+###2.切换到本地没有而远程服务器有的分支：
+```sh
+git fetch --all
+git checkout -f branch_name
+```
+
+###3.代码回滚
+```sh
+git reset --hard the_commit_id --回滚到某commit_id的版本
+```
+
+###4.放弃所有本地修改，跟远程服务器保持一致
+```sh
+git reset --hard origin/branch_name
+```
+
+###5.查看所有分支
+```sh
+git branch -a
+```
+
+###6.查看代码仓库地址
+```sh
+git remote -v
+```
+
+###7.修改远程仓库地址
+```sh
+git remote set-url origin remote_url
+```
+
+###8.查看历史commit信息
+```sh
+git log
+git log --stat #显示近几次提交更新文件的内容。（可显示最近提交人）
+git log --pretty=oneline --stat #仅仅显示最近提交更新的内容（不显示最近提交人）
+```
+
+###9.创建新的分支
+```sh
+git branch branch_name
+```
+
+###10.从一个分支推送到另外一个分支
+```sh
+git push origin branch_name_a:branch_name_b
+```
+
+
+##git如何删除远程仓库某次错误提交
+reset命令有3种方式
+```sh
+git reset --mixed
+此为默认方式，不带任何参数的git reset，就是这种方式，它回退到某个版本，只保留源码，回退commit和stage信息
+ 
+git reset --soft
+回退到某个版本， 只回退了commit的信息，不会恢复stage（如果还要提交，直接commit即可)
+ 
+git reset --hard
+彻底回退到某个版本， 本地的源码也会变为上一个版本的内容
+```
+
+整体思路分四步:
+
+1)打新的分支备份
+
+2)git reset --hard 版本号，本地回退到指定版本
+
+3)在本地把远程的branch_name分支删除
+
+4)再把reset后的分支内容给push上去
+
+```sh
+1）新建backup_branch_name分支 作为备份，以防万一[备份]
+git branch backup_branch_name
+将本地的backup_branch_name备份分支推送到远程[备份]
+git push origin backup_branch_name
+ 
+2）删除远程的branch_name分支 (注意branch_name前有个:)
+git push origin :branch_name
+3）本地仓库　彻底回退到某一个版本
+git reset --hard 版本号
+ 
+4）恢复远程仓库
+git push origin branch_name
+
+```
+
+技巧：
+删除远程分支(删除之前一定得备份)
+git push origin  :branch_name
