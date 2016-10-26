@@ -26,7 +26,7 @@ nodejs安装方法
 http://www.xitongzhijia.net/xtjc/20150202/36680.html
 
 ubuntu下安装docker方法：
-https://github.com/widuu/chinese_docker/blob/master/installation/ubuntu.md
+http://blog.csdn.net/mickjoust/article/details/51578629
 
 sublime text3中文输入问题修复：
 https://my.oschina.net/lee2013/blog/396855
