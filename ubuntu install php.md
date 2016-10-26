@@ -21,7 +21,7 @@ sudo apt-get install libreadline6 libreadline6-dev
 ```
 merge
 ```sh
-sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev
+sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev libfreetype6-dev
 ```
 ###四、编译：（编译参数2个中选择一个，第一段大部分机器即可编译，第二段参数推荐64位x86系统编译）
 ```
