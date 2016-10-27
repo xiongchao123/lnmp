@@ -70,3 +70,39 @@ pid=run/php-fpm.pid
 ```sh
 sudo /usr/local/php/sbin/php-fpm
 ```
+###7.将编译目录下的文件拷贝只系统目录，这样操作fpm更加方便
+```sh
+sudo cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+sudo chmod +x /etc/init.d/php-fpm
+#启动
+sudo systemctl start php-fpm
+#开机启动
+sudo systemctl enable php-fpm.service
+#更改相应选项
+vi /etc/php.ini
+	disable_functions = passthru,exec,system,chroot,scandir,chgrp,chown,shell_exec,proc_open,proc_get_status,ini_alter,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server,escapeshellcmd,dll,popen,disk_free_space,checkdnsrr,checkdnsrr,getservbyname,getservbyport,disk_total_space,posix_ctermid,posix_get_last_error,posix_getcwd, posix_getegid,posix_geteuid,posix_getgid, posix_getgrgid,posix_getgrnam,posix_getgroups,posix_getlogin,posix_getpgid,posix_getpgrp,posix_getpid, posix_getppid,posix_getpwnam,posix_getpwuid, posix_getrlimit, posix_getsid,posix_getuid,posix_isatty, posix_kill,posix_mkfifo,posix_setegid,posix_seteuid,posix_setgid, posix_setpgid,posix_setsid,posix_setuid,posix_strerror,posix_times,posix_ttyname,posix_uname
+	date.timezone=PRC
+	#短标记语法
+	expose_php=Off
+#记得启动php-fpm服务
+sudo systemctl restart php-fpm
+```
+###fpm操作
+自php5.3.3开始，php源码中包含了php-fpm，不需要单独通过补丁的方式安装php-fpm，在源码安装的时候直接 configure 中增加参数 –enable-fpm 即可。
+所以启动、关闭和重新加载的方式和以前不同，需要使用信号控制：
+php-fpm master 进程可以理解一下信号：
+```sh
+SIGINT, SIGTERM 立刻终止
+SIGQUIT 平滑终止
+SIGUSR1 重新打开日志文件
+SIGUSR2 平滑重载所有worker进程并重新载入配置和二进制模块
+```
+```sh
+#查找进程号
+ps -aux | grep php-fpm
+#关闭php-fpm
+sudo kill -SIGINT `cat /usr/local/php/var/run/php-fpm.pid`
+#重启
+sudo kill -SIGUSR2 `cat /usr/local/php/var/run/php-fpm.pid`
+```
+注意：/usr/local/php/var/run/php-fpm.pid 指存储master进程号的文件，这里是默认地址，在配置中可以修改，另外可以使用ps命令找到master的进程号，然后使用 kill 信号 进程号 的方式。
