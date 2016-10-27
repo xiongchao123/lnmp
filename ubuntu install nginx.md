@@ -18,12 +18,13 @@ sudo /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
 ###5.验证安装
 浏览器输入:http://localhost/
 
-###6.php
+###6.配置php
 ```sh
-sudo cp -r /home/qianxun/website/lnmp/nginx/vhosts/ /usr/local/nginx/conf/vhosts
+sudo cp -r /home/qianxun/website/lnmp/nginx/vhosts/ /usr/local/nginx/conf/
 sudo gedit /usr/local/nginx/conf/nginx.conf
 
 ##input and replace
 #include vhosts conf file, server setting
 include ./vhosts/*.conf;
 ```
+###7.重启php-fpm
