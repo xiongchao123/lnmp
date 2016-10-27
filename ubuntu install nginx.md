@@ -27,4 +27,13 @@ sudo gedit /usr/local/nginx/conf/nginx.conf
 #include vhosts conf file, server setting
 include ./vhosts/*.conf;
 ```
-###7.重启php-fpm
+###7.
+```sh
+sudo cp nginx /etc/init.d/
+sudo chmod +x /etc/init.d/nginx
+#启动
+sudo systemctl start nginx
+#开机启动
+sudo systemctl enable nginx.service
+sudo systemctl restart nginx
+```

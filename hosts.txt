@@ -1,0 +1,7 @@
+127.0.0.1 www.phalconcms.com phalconcms.com
+127.0.0.1 www.demo.com www.dongfeng.com www.headFirst.com
+127.0.0.1 www.laravelcms.com www.laraveltest.com
+127.0.0.1 www.mysqladmin.com www.new.com www.phalcontest.com www.phalconmvc.com www.phalconcms.com
+127.0.0.1 activitytest.yaochufa.com apitest.yaochufa.com apidoctest.yaochufa.com
+127.0.0.1 cpstest.yaochufa.com www.directselling.com jobtest.yaochufa.com
+127.0.0.1 mtest.yaochufa.com notifytest.yaochufa.com weixintest.yaochufa.com wwwtest.yaochufa.com youtest.yaochufa.com about.yaochufa.com
