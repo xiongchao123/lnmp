@@ -29,11 +29,9 @@ include ./vhosts/*.conf;
 ```
 ###7.
 ```sh
-sudo cp nginx /etc/init.d/
-sudo chmod +x /etc/init.d/nginx
-#启动
-sudo systemctl start nginx
-#开机启动
-sudo systemctl enable nginx.service
-sudo systemctl restart nginx
+/usr/local/nginx/sbin/nginx -h
+sudo /usr/local/nginx/sbin/nginx -s stop
+sudo /usr/local/nginx/sbin/nginx -s quit
+sudo /usr/local/nginx/sbin/nginx -s reopen
+sudo /usr/local/nginx/sbin/nginx -s reload
 ```
