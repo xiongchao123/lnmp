@@ -171,3 +171,8 @@ version update
 ```sh
 sudo update-manager  -c  -d 
 ```
+
+###win10 ubuntu16.04 双系统 时间不一致问题解决办法
+```sh
+timedatectl set-local-rtc true 
+```
