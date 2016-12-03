@@ -106,3 +106,38 @@ sudo kill -SIGINT `cat /usr/local/php/var/run/php-fpm.pid`
 sudo kill -SIGUSR2 `cat /usr/local/php/var/run/php-fpm.pid`
 ```
 注意：/usr/local/php/var/run/php-fpm.pid 指存储master进程号的文件，这里是默认地址，在配置中可以修改，另外可以使用ps命令找到master的进程号，然后使用 kill 信号 进程号 的方式。
+
+
+装扩展：
+memcached：
+```sh
+git clone --depth=1 -v https://github.com/php-memcached-dev/php-memcached.git -b php7 /tmp/memcached-ext
+cd /tmp/memcached-ext && phpize && ./configure && sudo make && sudo make install
+```
+phalcon:
+克隆后替换部分字符：
+>php-config  >>  /usr/local/php/bin/php-config
+>phpize  >>  /usr/local/php/bin/phpize
+>./configure  >>  ./configure --with-php-config=/usr/local/php/bin/php-config
+```sh
+git clone --depth=1 -v https://github.com/phalcon/cphalcon.git /tmp/phalcon-ext
+cd /tmp/phalcon-ext/build && sudo ./install
+```
+phpredis:
+```sh
+git clone --depth=1 -v https://github.com/phpredis/phpredis.git /tmp/phpredis-ext
+cd /tmp/phpredis-ext && phpize && ./configure && sudo make && sudo make install
+```
+swoole:
+```sh
+git clone --depth=1 https://github.com/swoole/swoole-src.git -b master /tmp/swoole-ext
+cd /tmp/swoole-ext && phpize && ./configure && sudo make && sudo make install
+```
+```sh
+sudo subl /usr/local/php/etc/php.ini
+912行加入：
+extension=memcached.so
+extension=phalcon.so
+extension=redis.so
+extension=swoole.so
+```
