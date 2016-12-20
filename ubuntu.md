@@ -124,6 +124,27 @@ Type=Application
 Categories=Application;Development;
 ```
 
+filezilla
+```sh
+sudo gedit /usr/share/applications/filezilla.desktop
+```
+输入以下内容：
+```sh
+[Desktop Entry]
+Name=FileZilla
+GenericName=FTP client
+GenericName[de]=FTP-Client
+GenericName[fr]=Client FTP
+Comment=Download and upload files via FTP, FTPS and SFTP
+Comment[de]=Dateien über FTP, FTPS und SFTP übertragen
+Comment[fr]=Transférer des fichiers via FTP, FTPS et SFTP
+Exec=/usr/local/FileZilla3/bin/filezilla
+Terminal=false
+Icon=/usr/local/FileZilla3/share/pixmaps/filezilla.png
+Type=Application
+Categories=Network;FileTransfer;
+Version=1.0
+```
 
 ###关于ubuntu 16.04 LTS下navicate的界面中文乱码问题：
 解压navicate软件包，打开start_navicate文件，
