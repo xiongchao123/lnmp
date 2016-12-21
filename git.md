@@ -64,6 +64,26 @@ git branch branch_name
 git push origin branch_name_a:branch_name_b
 ```
 
+###SSH Key
+http://git.oschina.net/oschina/git-osc/wikis/%E5%B8%AE%E5%8A%A9#ssh-keys
+http://www.ithao123.cn/content-1584888.html
+
+###git切换远程分支
+git HTTPS和SSH方式的区别和使用:http://www.ithao123.cn/content-1584888.html
+
+```sh
+git remote rm origin
+git remote add origin "git@git.oschina.net:zhaojianhui/lnmp.git"
+git push origin master
+```
+
+###改写历史，去除大文件
+```sh
+git filter-branch --tree-filter 'rm -f path/to/large/files' --tag-name-filter cat -- --all
+git push origin --tags --force
+git push origin --all --force
+```
+
 
 ##git如何删除远程仓库某次错误提交
 reset命令有3种方式
