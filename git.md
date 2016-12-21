@@ -77,6 +77,30 @@ git remote add origin "git@git.oschina.net:zhaojianhui/lnmp.git"
 git push origin master
 ```
 
+###git一个项目设置多个远程仓库
+1.使用git remote
+```sh
+git remote add origin https://git.coding.net/lixiaohao/phaser-flappybird.git
+```
+2.修改.git/config配置文件
+```sh
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+        precomposeunicode = true
+[remote "origin"]
+        url = git@git.coding.net:lixiaohao/phaser-flappybird.git
+        url = git@github.com:lh4111/phaser-flappybird.git
+        #在这里添加一行 url = xxx 即可
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+```
+
 ###改写历史，去除大文件
 ```sh
 git filter-branch --tree-filter 'rm -f path/to/large/files' --tag-name-filter cat -- --all
