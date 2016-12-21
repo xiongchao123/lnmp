@@ -22,6 +22,54 @@
         url = git@github.com:zhaojianhui129/rmp2016.git
 ```
 
+###home
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/home.git
+        url = git@git.coding.net:zhaojianhui/home.git
+        url = git@github.com:zhaojianhui129/home.git
+```
+
+###public
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/public.git
+        url = git@git.coding.net:zhaojianhui/public.git
+        url = git@github.com:zhaojianhui129/public.git
+```
+
+####headFirst
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/headFirst.git
+        url = git@git.coding.net:zhaojianhui/headFirst.git
+        url = git@github.com:zhaojianhui129/headFirst.git
+```
+
+###Codeigniter
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/Codeigniter.git
+        url = git@git.coding.net:zhaojianhui/Codeigniter.git
+        url = git@github.com:zhaojianhui129/Codeigniter.git
+```
+
+###lnmp:
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/lnmp.git
+        url = git@git.coding.net:zhaojianhui/lnmp.git
+        url = git@github.com:zhaojianhui129/lnmp.git
+```
+
+###docker:
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/docker.git
+        url = git@git.coding.net:zhaojianhui/docker.git
+        url = git@github.com:zhaojianhui129/docker.git
+```
+
 ###phalconCms:
 ```sh
 [remote "origin"]
@@ -30,18 +78,43 @@
         url = git@github.com:zhaojianhui129/phalconCms.git
 ```
 
-###lnmp:
+###laravelCms
 ```sh
 [remote "origin"]
-        url = git@github.com:zhaojianhui129/lnmp.git
-        url = git@git.coding.net:zhaojianhui/lnmp.git
-        url = git@git.oschina.net:zhaojianhui/lnmp.git
+        url = git@git.oschina.net:zhaojianhui/laravelCms.git
+        url = git@git.coding.net:zhaojianhui/laravelCms.git
+        url = git@github.com:zhaojianhui129/laravelCms.git
 ```
 
-###docker:
+###ycfDocker
 ```sh
 [remote "origin"]
-        url = git@github.com:zhaojianhui129/docker.git
-        url = git@git.coding.net:zhaojianhui/docker.git
-        url = git@git.oschina.net:zhaojianhui/docker.git
+        url = git@git.oschina.net:zhaojianhui/ycfDocker.git
+        url = git@git.coding.net:zhaojianhui/ycfDocker.git
+        url = git@github.com:zhaojianhui129/ycfDocker.git
+```
+
+###CI-1.7.3
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/CI-1.7.3.git
+        url = git@git.coding.net:zhaojianhui/CI-1.7.3.git
+        url = git@github.com:zhaojianhui129/CI-1.7.3.git
+```
+
+###dwztp
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/dwztp.git
+        url = git@git.coding.net:zhaojianhui/dwztp.git
+        url = git@github.com:zhaojianhui129/dwztp.git
+```
+
+###cLearnTest
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/cLearnTest.git
+        url = git@git.coding.net:zhaojianhui/cLearnTest.git
+        url = git@github.com:zhaojianhui129/cLearnTest.git
+
 ```
