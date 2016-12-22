@@ -1,3 +1,19 @@
+###bc2015
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/bc2015.git
+        url = git@git.coding.net:zhaojianhui/bc2015.git
+        url = git@github.com:zhaojianhui129/bc2015.git
+```
+
+###baicheng2015
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/baicheng2015.git
+        url = git@git.coding.net:zhaojianhui/baicheng2015.git
+        url = git@github.com:zhaojianhui129/baicheng2015.git
+```
+
 ###implement2016
 ```sh
 [remote "origin"]
@@ -108,6 +124,14 @@
         url = git@git.oschina.net:zhaojianhui/dwztp.git
         url = git@git.coding.net:zhaojianhui/dwztp.git
         url = git@github.com:zhaojianhui129/dwztp.git
+```
+
+###swoole-phalcon-cms
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/swoole-phalcon-cms.git
+        url = git@git.coding.net:zhaojianhui/swoole-phalcon-cms.git
+        url = git@github.com:zhaojianhui129/swoole-phalcon-cms.git
 ```
 
 ###cLearnTest
