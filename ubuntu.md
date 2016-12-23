@@ -31,6 +31,9 @@ http://blog.csdn.net/mickjoust/article/details/51578629
 sublime text3中文输入问题修复：
 https://my.oschina.net/lee2013/blog/396855
 
+ubuntu下安装最新版GCC的方法：
+http://www.linuxidc.com/Linux/2016-11/136840.htm
+
 
 ubuntu修改host方法：
 
