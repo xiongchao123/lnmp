@@ -142,3 +142,11 @@
         url = git@github.com:zhaojianhui129/cLearnTest.git
 ```
 
+###static.tudouyu.cn
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/static.tudouyu.cn.git
+        url = git@git.coding.net:zhaojianhui/static.tudouyu.cn.git
+        url = git@github.com:zhaojianhui129/static.tudouyu.cn.git
+```
+
