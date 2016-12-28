@@ -126,6 +126,14 @@
         url = git@github.com:zhaojianhui129/dwztp.git
 ```
 
+###swooletest
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/swooletest.git
+        url = git@git.coding.net:zhaojianhui/swooletest.git
+        url = git@github.com:zhaojianhui129/swooletest.git
+```
+
 ###swoole-phalcon-cms
 ```sh
 [remote "origin"]
