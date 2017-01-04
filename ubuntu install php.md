@@ -130,7 +130,7 @@ cd /tmp/phpredis-ext && phpize && ./configure && sudo make && sudo make install
 ```
 swoole:
 ```sh
-git clone --depth=1 https://github.com/swoole/swoole-src.git -b master /tmp/swoole-ext
+git clone --depth=1 git@git.oschina.net:matyhtf/swoole.git -b master /tmp/swoole-ext
 cd /tmp/swoole-ext && phpize && ./configure && sudo make && sudo make install
 ```
 ```sh

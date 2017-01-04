@@ -142,6 +142,14 @@
         url = git@github.com:zhaojianhui129/swoole-phalcon-cms.git
 ```
 
+###swooleProject
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/swooleProject.git
+        url = git@git.coding.net:zhaojianhui/swooleProject.git
+        url = git@github.com:zhaojianhui129/swooleProject.git
+```
+
 ###cLearnTest
 ```sh
 [remote "origin"]
