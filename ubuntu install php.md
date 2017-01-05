@@ -114,25 +114,31 @@ memcached：
 git clone --depth=1 -v https://github.com/php-memcached-dev/php-memcached.git -b php7 /tmp/memcached-ext
 cd /tmp/memcached-ext && phpize && ./configure && sudo make && sudo make install
 ```
+
 phalcon:
 克隆后替换部分字符：
 >php-config  >>  /usr/local/php/bin/php-config
 >phpize  >>  /usr/local/php/bin/phpize
 >./configure  >>  ./configure --with-php-config=/usr/local/php/bin/php-config
+
 ```sh
 git clone --depth=1 -v https://github.com/phalcon/cphalcon.git /tmp/phalcon-ext
 cd /tmp/phalcon-ext/build && sudo ./install
 ```
+
 phpredis:
 ```sh
 git clone --depth=1 -v https://github.com/phpredis/phpredis.git /tmp/phpredis-ext
 cd /tmp/phpredis-ext && phpize && ./configure && sudo make && sudo make install
 ```
+
 swoole:
 ```sh
 git clone --depth=1 git@git.oschina.net:matyhtf/swoole.git -b v2.0.5 /tmp/swoole-ext
 cd /tmp/swoole-ext && phpize && ./configure && sudo make && sudo make install
 ```
+
+
 ```sh
 sudo subl /usr/local/php/etc/php.ini
 912行加入：
