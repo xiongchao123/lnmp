@@ -138,6 +138,11 @@ git clone --depth=1 git@git.oschina.net:matyhtf/swoole.git -b v2.0.5 /tmp/swoole
 cd /tmp/swoole-ext && phpize && ./configure && sudo make && sudo make install
 ```
 
+runkit:
+```sh
+git clone --depth=1 -v git@github.com:runkit7/runkit7.git /tmp/runkit-ext
+cd /tmp/runkit-ext && phpize && ./configure && sudo make && sudo make install
+```
 
 ```sh
 sudo subl /usr/local/php/etc/php.ini
@@ -146,4 +151,5 @@ extension=memcached.so
 extension=phalcon.so
 extension=redis.so
 extension=swoole.so
+extension=runkit.so
 ```
