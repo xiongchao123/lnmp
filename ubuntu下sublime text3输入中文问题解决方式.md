@@ -99,7 +99,7 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
 编译上面创建的sublime_imfix.c文件，命令如下：
 ```sh
 # 首先安装编译需要的依赖包
-sudo apt-get install build-essential libgtk2.0-dev
+sudo apt-get install build-essential libgtk2.0-dev -y
 # 编译
 cd ~
 gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
