@@ -34,6 +34,23 @@ https://my.oschina.net/lee2013/blog/396855
 ubuntu下安装最新版GCC的方法：
 http://www.linuxidc.com/Linux/2016-11/136840.htm
 
+http://blog.csdn.net/skykingf/article/details/45267517
+
+git安装及初始化：
+```sh
+sudo apt-get install git
+git config --global user.name "zhaojianhui"
+git config --global user.email "zhaojianhui129@163.com"
+ssh-keygen -t rsa -C "zhaojianhui129@163.com"
+cat ~/.ssh/id_rsa.pub
+```
+ubuntu优化：
+```sh
+sudo apt-get autoremove libreoffice-common
+sudo apt-get autoremove totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines cheese transmission-common gnome-orca webbrowser-app gnome-sudoku landscape-client-ui-install
+sudo apt-get autoremove onboard deja-dup
+```
+
 
 ubuntu修改host方法：
 
