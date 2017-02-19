@@ -153,3 +153,9 @@ extension=redis.so
 extension=swoole.so
 extension=runkit.so
 ```
+
+composer全局安装：
+```sh
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+```
