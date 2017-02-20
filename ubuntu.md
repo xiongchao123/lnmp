@@ -215,5 +215,11 @@ sudo update-manager  -c  -d
 
 ###win10 ubuntu16.04 双系统 时间不一致问题解决办法
 ```sh
-timedatectl set-local-rtc true 
+//先在ubuntu下更新一下时间，确保时间无误：
+sudo apt-get install ntpdate
+sudo ntpdate time.windows.com
+//然后将时间更新到硬件上：
+sudo hwclock --localtime --systohc
+//重新进入windows10，发现时间恢复正常了！
+reboot
 ```
