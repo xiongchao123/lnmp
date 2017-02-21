@@ -111,7 +111,8 @@ sudo kill -SIGUSR2 `cat /usr/local/php/var/run/php-fpm.pid`
 装扩展：
 memcached：
 ```sh
-git clone --depth=1 -v https://github.com/php-memcached-dev/php-memcached.git -b php7 /tmp/memcached-ext
+sudo apt-get install libmemcached-dev
+git clone --depth=1 -v https://github.com/php-memcached-dev/php-memcached.git /tmp/memcached-ext
 cd /tmp/memcached-ext && phpize && ./configure && sudo make && sudo make install
 ```
 
@@ -119,10 +120,10 @@ phalcon:
 克隆后替换部分字符：
 >php-config  >>  /usr/local/php/bin/php-config
 >phpize  >>  /usr/local/php/bin/phpize
->./configure  >>  ./configure --with-php-config=/usr/local/php/bin/php-config
 
 ```sh
 git clone --depth=1 -v https://github.com/phalcon/cphalcon.git /tmp/phalcon-ext
+sudo gedit /tmp/phalcon-ext/build/install
 cd /tmp/phalcon-ext/build && sudo ./install
 ```
 

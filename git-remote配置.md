@@ -165,4 +165,10 @@
         url = git@git.coding.net:zhaojianhui/static.tudouyu.cn.git
         url = git@github.com:zhaojianhui129/static.tudouyu.cn.git
 ```
-
+###swooleRabbitMQ
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/swooleRabbitMQ.git
+        url = git@git.coding.net:zhaojianhui/swooleRabbitMQ.git
+        url = git@github.com:zhaojianhui129/swooleRabbitMQ.git
+```
