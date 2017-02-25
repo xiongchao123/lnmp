@@ -35,6 +35,7 @@ Working directory:`$ProjectFileDir$`
 ####Step 3: 设置快捷键
 再次导航到：`Settings/Preferences` 找到`Keymap`项，搜索`php-cs-fixer`,找到后右键添加快捷键。
 
+![图片](images/Bildschirmfoto-2015-01-29-um-10.50.02.png)
 
 ###Sublime Text安装方法
 
