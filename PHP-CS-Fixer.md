@@ -1,7 +1,7 @@
 #PHP-CS-Fixer代码格式化工具安装方法
 
 
-###PhpStorm安装方式
+###PhpStorm安装方法
 
 ####Step 1: 下载并安装工具
 ```sh
@@ -31,3 +31,9 @@ Description:`Command with --dry-run and --diff`
 Program:`/usr/local/bin/php-cs-fixer`
 Parameters:`--quiet --verbose fix "$FileDir$/$FileName$"`
 Working directory:`$ProjectFileDir$`
+
+####Step 3: 设置快捷键
+再次导航到：`Settings/Preferences` 找到`Keymap`项，搜索`php-cs-fixer`,找到后右键添加快捷键。
+
+
+###Sublime Text安装方法
