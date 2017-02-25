@@ -37,3 +37,5 @@ Working directory:`$ProjectFileDir$`
 
 
 ###Sublime Text安装方法
+
+http://www.uedbox.com/macos-install-sublime-phpcs/
