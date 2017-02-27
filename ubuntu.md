@@ -46,9 +46,9 @@ cat ~/.ssh/id_rsa.pub
 ```
 ubuntu优化：
 ```sh
-sudo apt-get autoremove libreoffice-common
-sudo apt-get autoremove totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines cheese transmission-common gnome-orca webbrowser-app gnome-sudoku landscape-client-ui-install
-sudo apt-get autoremove onboard deja-dup
+sudo apt-get autoremove libreoffice-common -y
+sudo apt-get autoremove totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines cheese transmission-common gnome-orca webbrowser-app gnome-sudoku landscape-client-ui-install -y
+sudo apt-get autoremove onboard deja-dup -y
 ```
 
 
