@@ -17,11 +17,11 @@ sudo apt-get install libcurl4-gnutls-dev
 sudo apt-get install libjpeg-dev
 sudo apt-get install libpng-dev
 sudo apt-get install libmcrypt-dev
-sudo apt-get install libreadline6 libreadline6-dev
+sudo apt-get install libreadline6 libreadline6-dev autoconf
 ```
 merge
 ```sh
-sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev libfreetype6-dev
+sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev libfreetype6-dev autoconf
 ```
 ###三、编译：（编译参数2个中选择一个，第一段大部分机器即可编译，第二段参数推荐64位x86系统编译）
 ```
@@ -109,6 +109,11 @@ sudo kill -SIGUSR2 `cat /usr/local/php/var/run/php-fpm.pid`
 
 
 装扩展：
+xdebug:
+```sh
+git clone --depth=1 -v https://github.com/xdebug/xdebug.git /tmp/xdebug-ext
+cd /tmp/xdebug-ext && phpize && ./configure --enable-xdebug && sudo make && sudo make install
+```
 memcached：
 ```sh
 sudo apt-get install libmemcached-dev
@@ -148,6 +153,7 @@ cd /tmp/runkit-ext && phpize && ./configure && sudo make && sudo make install
 ```sh
 sudo subl /usr/local/php/etc/php.ini
 912行加入：
+extension=xdebug.so
 extension=memcached.so
 extension=phalcon.so
 extension=redis.so
@@ -158,5 +164,5 @@ extension=runkit.so
 composer全局安装：
 ```sh
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
 ```
