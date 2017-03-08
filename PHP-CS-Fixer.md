@@ -30,8 +30,8 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer --help
 Name:`Php-cs-fixer`
 Group:`php-cs-fixer over current class`
 Description:`Command with --dry-run and --diff`
-Program:`/usr/local/bin/php-cs-fixer`
-Parameters:`--quiet --verbose fix "$FileDir$/$FileName$"`
+Program:`/usr/local/php/bin/php`
+Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose fix "$FileDir$/$FileName$"`
 Working directory:`$ProjectFileDir$`
 
 ####Step 3: 设置快捷键
