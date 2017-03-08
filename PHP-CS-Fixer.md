@@ -5,9 +5,11 @@
 
 ####Step 1: 下载并安装工具
 ```sh
-sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v1.12.3/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
+sudo curl -L http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/local/bin/php-cs-fixer
+sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
 #or
-sudo wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v1.12.3/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
+sudo wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O /usr/local/bin/php-cs-fixer
+sudo wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
 
 sudo chmod a+x /usr/local/bin/php-cs-fixer
 #update
