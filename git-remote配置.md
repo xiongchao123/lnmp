@@ -172,3 +172,13 @@
         url = git@git.coding.net:zhaojianhui/swooleRabbitMQ.git
         url = git@github.com:zhaojianhui129/swooleRabbitMQ.git
 ```
+
+###phalcon-devtools
+```sh
+git clone --depth=1 https://github.com/phalcon/phalcon-devtools.git
+```
+
+###swoole-ide-helper
+```sh
+git clone --depth=1 https://github.com/eaglewu/swoole-ide-helper
+```
