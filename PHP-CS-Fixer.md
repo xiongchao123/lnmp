@@ -21,7 +21,7 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer selfupdate
 ####Step 2: 打开设置
 打开设置Settings/Preferences. 导航找到：Tools -> External Tools并用下图的值填充。
 
-![图片](images/Bildschirmfoto-2015-01-29-um-10.44.09.png)
+![图片](images/phpstorm-image1.png)
 
 由于版本升级，所以要使用如下命令查看参数配置是否可用，否则是运行不成功的。
 ```sh
@@ -41,7 +41,7 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer --help
 ####Step 3: 设置快捷键
 再次导航到：`Settings/Preferences` 找到`Keymap`项，搜索`php-cs-fixer`,找到后右键添加快捷键。
 
-![图片](images/Bildschirmfoto-2015-01-29-um-10.50.02.png)
+![图片](images/phpstorm-image2.png)
 
 ###Step 4: 添加通用配置
 在每个开发项目根目录下创建一个名为`.php_cs`的配置文件，内容如下，可自行调整
