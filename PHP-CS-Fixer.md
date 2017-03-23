@@ -1,7 +1,7 @@
 #PHP-CS-Fixer V2版本代码格式化工具安装方法
 
 
-###PhpStorm安装方法
+##PhpStorm安装方法
 github地址：https://github.com/FriendsOfPHP/PHP-CS-Fixer
 
 ####Step 1: 下载并安装工具
@@ -95,6 +95,45 @@ return PhpCsFixer\Config::create()
 ;
 ```
 
-###Sublime Text安装方法
+##Sublime Text安装方法
+### Step 1:下载PHP code sniffer插件安装包
+地址:https://github.com/benmatselby/sublime-phpcs;
+
+Use Sublime Text’s Package Control (Preferences -> Package Control -> Install Package -> Phpcs) to install this plugin. This is the recommended installation path.
+
+###Step 2: 下载php-cs-fixer.phar
+```sh
+sudo curl -L http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/local/bin/php-cs-fixer
+sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
+#or
+sudo wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O /usr/local/bin/php-cs-fixer
+sudo wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
+
+sudo chmod a+x /usr/local/bin/php-cs-fixer
+#update
+sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer selfupdate
+```
+
+###Step 3:安装PHP_CodeSniffer
+http://pear.php.net/package/PHP_CodeSniffer/download
+下载地址：
+http://download.pear.php.net/package/PHP_CodeSniffer-3.0.0RC4.tgz
+```sh
+tar zxvf PHP_CodeSniffer-3.0.0RC4.tgz
+sudo mv PHP_CodeSniffer-3.0.0RC4 /usr/local
+```
+###Step 4:配置
+拷贝PHp Code Sniffer的默认配置到用户自定义配置中：
+然后将以下参数调整为对应的目录：
+```sh
+"phpcs_php_path": "/usr/local/php/bin/php",
+"phpcs_executable_path": "/usr/local/PHP_CodeSniffer-3.0.0RC4/bin/phpcs",
+"phpmd_executable_path": "",
+"php_cs_fixer_executable_path": "/usr/local/bin/php-cs-fixer",
+```
+快捷键：
+```sh
+{ "keys": ["ctrl+alt+l"], "command": "phpcs_fix_this_file", "args": {"tool": "CodeBeautifier"}}
+```
 
 http://www.uedbox.com/macos-install-sublime-phpcs/
