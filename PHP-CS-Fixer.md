@@ -1,4 +1,4 @@
-#PHP-CS-Fixer代码格式化工具安装方法
+#PHP-CS-Fixer V2版本代码格式化工具安装方法
 
 
 ###PhpStorm安装方法
