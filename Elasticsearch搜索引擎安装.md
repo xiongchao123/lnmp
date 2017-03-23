@@ -65,3 +65,11 @@ bin\kibana.bat plugin --install elastic/sense
 /usr/local/kibana-5.2.2-linux-x86_64/bin/kibana
 ```
 4、在你的浏览器中打开 Sense：`http://localhost:5601/app/sense`
+
+###访问客户端
+列表：
+https://www.elastic.co/guide/en/elasticsearch/client/community/current/index.html
+PHP:
+https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html
+github地址：
+https://github.com/elastic/elasticsearch-php
