@@ -91,7 +91,7 @@ return PhpCsFixer\Config::create()
     ->setUsingCache(false)
 ;
 ```
-
+![图片](images/phpstorm-image3.png)
 ###Sublime Text安装方法
 
 http://www.uedbox.com/macos-install-sublime-phpcs/
