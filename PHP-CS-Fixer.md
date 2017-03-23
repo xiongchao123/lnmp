@@ -2,6 +2,7 @@
 
 
 ###PhpStorm安装方法
+github地址：https://github.com/FriendsOfPHP/PHP-CS-Fixer
 
 ####Step 1: 下载并安装工具
 ```sh
