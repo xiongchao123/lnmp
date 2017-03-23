@@ -28,13 +28,13 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer selfupdate
 sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer --help
 ```
 
->Name:`Php-cs-fixer`
->Group:`php-cs-fixer over current class`
->Description:`Command with --dry-run and --diff`
->Program:`/usr/local/php/bin/php`
->Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose fix "$FileDir$/$FileName$"`
+>Name:`Php-cs-fixer`   <br>
+>Group:`php-cs-fixer over current class`   <br>
+>Description:`Command with --dry-run and --diff`   <br>
+>Program:`/usr/local/php/bin/php`   <br>
+>Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose fix "$FileDir$/$FileName$"`   <br>
 >--quiet参数表示不输出
->Working directory:`$ProjectFileDir$`
+>Working directory:`$ProjectFileDir$`   <br>
 
 
 ####Step 3: 设置快捷键
