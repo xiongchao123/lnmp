@@ -28,14 +28,15 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer selfupdate
 sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer --help
 ```
 
->Name:`Php-cs-fixer`
->Group:`php-cs-fixer over current class`
->Description:`Command with --dry-run and --diff`
->Program:`/usr/local/php/bin/php`
->Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose fix "$FileDir$/$FileName$"`
->--quiet参数表示不输出
->Working directory:`$ProjectFileDir$`
-
+```sh
+Name:`Php-cs-fixer`
+Group:`php-cs-fixer over current class`
+Description:`Command with --dry-run and --diff`
+Program:`/usr/local/php/bin/php`
+Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose fix "$FileDir$/$FileName$"`
+#--quiet参数表示不输出
+Working directory:`$ProjectFileDir$`
+```
 
 ####Step 3: 设置快捷键
 再次导航到：`Settings/Preferences` 找到`Keymap`项，搜索`php-cs-fixer`,找到后右键添加快捷键。
@@ -43,7 +44,7 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer --help
 ![图片](images/Bildschirmfoto-2015-01-29-um-10.50.02.png)
 
 ###Step 4: 添加通用配置
-在每个开发项目下添加一个名为`.php_cs`的配置文件，内容如下，可自行调整
+在每个开发项目根目录下创建一个名为`.php_cs`的配置文件，内容如下，可自行调整
 ```php
 <?php
 $header = <<<'EOF'
