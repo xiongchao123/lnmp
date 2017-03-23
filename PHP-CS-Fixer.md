@@ -128,6 +128,7 @@ sudo mv PHP_CodeSniffer-3.0.0RC4 /usr/local
 ```sh
 "phpcs_php_path": "/usr/local/php/bin/php",
 "phpcs_executable_path": "/usr/local/PHP_CodeSniffer-3.0.0RC4/bin/phpcs",
+"phpcbf_executable_path": "/usr/local/PHP_CodeSniffer-3.0.0RC4/bin/phpcbf",
 "phpmd_executable_path": "",
 "php_cs_fixer_executable_path": "/usr/local/bin/php-cs-fixer",
 ```
