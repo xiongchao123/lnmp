@@ -44,6 +44,9 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer --help
 ![图片](images/phpstorm-image2.png)
 
 ###Step 4: 添加通用配置
+
+![图片](images/phpstorm-image3.png)
+
 在每个开发项目根目录下创建一个名为`.php_cs`的配置文件，内容如下，可自行调整
 ```php
 <?php
@@ -91,7 +94,7 @@ return PhpCsFixer\Config::create()
     ->setUsingCache(false)
 ;
 ```
-![图片](images/phpstorm-image3.png)
+
 ###Sublime Text安装方法
 
 http://www.uedbox.com/macos-install-sublime-phpcs/
