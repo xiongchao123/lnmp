@@ -121,6 +121,10 @@ http://download.pear.php.net/package/PHP_CodeSniffer-3.0.0RC4.tgz
 ```sh
 tar zxvf PHP_CodeSniffer-3.0.0RC4.tgz
 sudo mv PHP_CodeSniffer-3.0.0RC4 /usr/local
+
+echo "export PATH=/usr/local//usr/local/PHP_CodeSniffer-3.0.0RC4/bin/:$PATH" >> /etc/profile
+#
+source /etc/profile
 ```
 ###Step 4:配置
 拷贝PHp Code Sniffer的默认配置到用户自定义配置中：
