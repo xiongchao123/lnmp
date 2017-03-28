@@ -1,6 +1,12 @@
 #PHP性能分析
 
-###Xdebug安装
+##一、OneAPM(收费)
+http://www.oneapm.com/index.html
+
+##二、xhprof分析性能（Facebook）
+http://blog.csdn.net/lvchengbo/article/details/52849179
+https://github.com/Yaoguais/phpng-xhprof
+##三、Xdebug安装
 
 ```sh
 git clone --depth=1 -v https://github.com/xdebug/xdebug.git /tmp/xdebug-ext
@@ -12,29 +18,47 @@ extension=xdebug.so
 ;xdebug配置
 [Xdebug]
 ;开启自动跟踪
-xdebug.auto_trace = 1
+xdebug.auto_trace=1
 ;开启异常跟踪
-xdebug.show_exception_trace = 1
+xdebug.show_exception_trace=1
 ;开启远程调试自动启动
-xdebug.remote_autostart = 1
+xdebug.remote_autostart=1
 ;开启远程调试
-xdebug.remote_enable = 1
+xdebug.remote_enable=1
+xdebug.remote_connect_back=1
+xdebug.remote_port = 9000
+xdebug.scream=0
+xdebug.show_local_vars=1
+xdebug.idekey=PHPSTORM
 ;收集变量
-xdebug.collect_vars = 1
+xdebug.collect_vars=1
 ;收集返回值
-xdebug.collect_return = 1
+xdebug.collect_return=1
 ;收集参数
-xdebug.collect_params = 1
+xdebug.collect_params=1
+;是否覆盖php里面的函数var_dump();默认是开启的，值为1；设为0，则关闭；
+xdebug.overload_var_dump = 1
+;控制数组子元素显示的大小默认为256
+xdebug.var_display_max_children = 256
+;控制变量打印的大小，默认为512
+xdebug.var_display_max_data = 512
+;控制数组和对象元素显示的层级。默认为3
+xdebug.var_display_max_depth = 3
 ;性能监控
-xdebug.profiler_enable = 1
-xdebug.trace_output_dir="/tmp/xdebug"
+xdebug.profiler_enable=1
+;xdebug.profiler_enable_trigger=1
+;xdebug.profiler_enable_trigger_value=1
+xdebug.trace_output_dir=/tmp/xdebug
+xdebug.trace_output_name=trace.
 ;用来存放性能分析文件,可自由定义目录
-xdebug.profiler_output_dir = "/tmp/xdebug"
-xdebug.profiler_output_name = "cachegrind.out.%s"
+xdebug.profiler_output_dir=/tmp/xdebug
+xdebug.profiler_output_name=cachegrind.out.%s
 #------------------------------------
 
 #重启
 sudo kill -SIGUSR2 `cat /usr/local/php/var/run/php-fpm.pid`
+sudo mkdir -p /tmp/xdebug
+sudo chmod 777 /tmp/xdebug
 ```
 ####参数意义
 |符号 | 含义 | 配置样例  |  样例文件名 |
@@ -49,7 +73,9 @@ sudo kill -SIGUSR2 `cat /usr/local/php/var/run/php-fpm.pid`
 |%R | $_SERVER['REQUEST_URI'] | trace.%R  |  trace._test_xdebug_test_php_var=1_var2=2.xt |
 |%S | session_id (来自$_COOKIE 如果设置了的话) | trace.%S    trace.c70c1ec2375af58f74b390bbdd2a679d.xt|
 |%% | %字符| trace.%%  |  trace.%.xt|
-|注 此项不适用于trace file的文件名 |
+
+注 此项不适用于trace file的文件名
+
 
 比如，我想针对每个文件生成一个输出文件。
 那么我可以用：
