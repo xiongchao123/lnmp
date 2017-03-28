@@ -5,7 +5,72 @@ http://www.oneapm.com/index.html
 
 ##二、xhprof分析性能（Facebook）
 http://blog.csdn.net/lvchengbo/article/details/52849179
+
+PECL上提供的最新扩展并不支持php7版本
+如果想为php7使用xhprof进行性能分析的话请参考https://github.com/Yaoguais/phpng-xhprof所介绍的方法进行编译安装。
 https://github.com/Yaoguais/phpng-xhprof
+
+```sh
+git clone git@github.com:Yaoguais/phpng-xhprof.git /tmp/xhprof-ext
+cd /tmp/xhprof-ext && phpize && ./configure --with-php-config=/usr/local/php/bin/php-config && make clean && make && make test && sudo make install
+sudo subl /usr/local/php/etc/php.ini
+#------------------------------------
+[xhprof]
+extension=phpng_xhprof.so
+xhprof.output_dir=/tmp/xhprof
+#------------------------------------
+```
+
+###重启
+sudo kill -SIGUSR2 `cat /usr/local/php/var/run/php-fpm.pid`
+sudo mkdir -p /tmp/xhprof
+sudo chmod 777 /tmp/xhprof
+```
+####对PHP进行性能分析
+在XHProf扩展中，一共提供了四个函数用于对PHP进行性能分析。
+xhprof_enable/xhprof_sample_enable函数用于开始XHProf性能分析，区别在于前者功能更加强大，而后者则是是以简单模式启动性能分析（简单记录了函数的调用栈信息），开销比较小。
+xhprof_disable/xhprof_sample_disable函数用于停止性能分析，并返回分析的数据。
+需要特别说明的函数是xhprof_enable，其他函数都是不需要提供参数的，而该函数则可以接受两个可选的参数，用于改变该工具的行为。
+void xhprof_enable ([ int $flags = 0 [, array $options ]] )
+flags该参数用于为剖析结果添加额外的信息，该参数的值使用以下宏，如果需要提供多个值，使用|进行分隔。
+XHPROF FLAGS NO_BUILTINS 跳过所有的内置函数
+XHPROF FLAGS CPU 添加对CPU使用的分析
+XHPROF FLAGS MEMORY 添加对内存使用的分析
+options数组形式提供可选参数，在此处提供ignored_functions选项需要忽略的函数
+比如下面的例子，同时对内存和CPU进行分析，并且忽略对call_user_func和call_user_func_array函数的分析。
+```php
+PHP5.5以下，PHP文件中开启的代码
+xhprof_enable(
+  XHPROF_FLAGS_MEMORY|XHPROF_FLAGS_CPU,
+  [
+    'ignored_functions'	=> [
+      'call_user_func',
+      'call_user_func_array'
+    ]
+  ]
+);
+#PHP5.5及以上，PHP文件中开启的代码
+xhprof_enable(XHPROF_FLAGS_NO_BUILTINS | XHPROF_FLAGS_CPU | XHPROF_FLAGS_MEMORY,
+ [
+   'ignored_functions'	=> [
+     'call_user_func',
+     'call_user_func_array'
+   ]
+ ]
+);
+// 这里是PHP代码，比如业务逻辑实现等要被分析的代码部分
+....
+xhprof_enable();
+// your code
+// ...
+file_put_contents((ini_get('xhprof.output_dir') ? : '/tmp') . '/' . uniqid() . '.xhprof.xhprof', serialize(xhprof_disable()));
+```
+###形象化的查看分析结果
+
+PHP性能被动分析工具之xhgui加tideways的安装实践
+https://segmentfault.com/a/1190000007580819
+
+
 ##三、Xdebug安装
 
 ```sh
@@ -17,6 +82,7 @@ sudo subl /usr/local/php/etc/php.ini
 extension=xdebug.so
 ;xdebug配置
 [Xdebug]
+extension=xdebug.so
 ;开启自动跟踪
 xdebug.auto_trace=1
 ;开启异常跟踪
@@ -52,10 +118,10 @@ xdebug.trace_output_dir=/tmp/xdebug
 xdebug.trace_output_name=trace.
 ;用来存放性能分析文件,可自由定义目录
 xdebug.profiler_output_dir=/tmp/xdebug
-xdebug.profiler_output_name=cachegrind.out.%s
+xdebug.profiler_output_name=cachegrind.out.%H.%R
 #------------------------------------
 
-#重启
+###重启
 sudo kill -SIGUSR2 `cat /usr/local/php/var/run/php-fpm.pid`
 sudo mkdir -p /tmp/xdebug
 sudo chmod 777 /tmp/xdebug
@@ -96,5 +162,5 @@ WinCacheGrind（Windows）：http://ceefour.github.io/wincachegrind/
 
 ###KCachegrind安装使用
 ```sh
-git clone git://anongit.kde.org/kcachegrind
+sudo apt-get install kcachegrind
 ```
