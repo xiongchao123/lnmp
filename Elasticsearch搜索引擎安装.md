@@ -104,6 +104,7 @@ kill -9 进程号
 ```
 
 ###pinyin分词器
+github地址：https://github.com/medcl/elasticsearch-analysis-pinyin
 ```sh
 sudo wget https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v5.2.2/elasticsearch-analysis-pinyin-5.2.2.zip -o elasticsearch-analysis-ik.zip
 unzip elasticsearch-analysis-pinyin-5.2.2.zip -d /usr/local/elasticsearch-5.2.2/plugins/pinyin
