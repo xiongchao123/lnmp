@@ -65,13 +65,17 @@ xhprof_enable();
 // ...
 file_put_contents((ini_get('xhprof.output_dir') ? : '/tmp') . '/' . uniqid() . '.xhprof.xhprof', serialize(xhprof_disable()));
 ```
+
+
 ###形象化的查看分析结果
 
 PHP性能被动分析工具之xhgui加tideways的安装实践
 https://segmentfault.com/a/1190000007580819
 
+##三、xhgui+tideways
+https://segmentfault.com/a/1190000007580819
 
-##三、Xdebug安装
+##四、Xdebug安装（推荐）
 
 ```sh
 git clone --depth=1 -v https://github.com/xdebug/xdebug.git /tmp/xdebug-ext
