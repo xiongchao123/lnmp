@@ -103,6 +103,31 @@ kill -9 进程号
 /usr/local/elasticsearch-5.2.2/bin/elasticsearch -Ecluster.name=zjh -Enode.name=zjhNode -d
 ```
 
+配置：
+```sh
+curl -XPUT http://localhost:9200/index
+curl -XPOST http://localhost:9200/index/fulltext/_mapping -d'
+{
+    "fulltext": {
+             "_all": {
+            "analyzer": "ik_max_word",
+            "search_analyzer": "ik_max_word",
+            "term_vector": "no",
+            "store": "false"
+        },
+        "properties": {
+            "content": {
+                "type": "text",
+                "analyzer": "ik_max_word",
+                "search_analyzer": "ik_max_word",
+                "include_in_all": "true",
+                "boost": 8
+            }
+        }
+    }
+}'
+```
+
 ###pinyin分词器
 github地址：https://github.com/medcl/elasticsearch-analysis-pinyin
 ```sh
@@ -110,6 +135,36 @@ sudo wget https://github.com/medcl/elasticsearch-analysis-pinyin/releases/downlo
 unzip elasticsearch-analysis-pinyin-5.2.2.zip -d /usr/local/elasticsearch-5.2.2/plugins/pinyin
 cd /usr/local/elasticsearch-5.2.2/plugins/pinyin/
 ```
+
+配置：
+```sh
+#创建一个带自定义分析器的所用
+curl -XPUT http://localhost:9200/my_index/ -d'
+{
+    "index" : {
+        "analysis" : {
+            "analyzer" : {
+                "pinyin_analyzer" : {
+                    "tokenizer" : "my_pinyin"
+                    }
+            },
+            "tokenizer" : {
+                "my_pinyin" : {
+                    "type" : "pinyin",
+                    "keep_separate_first_letter" : false,
+                    "keep_full_pinyin" : true,
+                    "keep_original" : true,
+                    "limit_first_letter_length" : 16,
+                    "lowercase" : true,
+                    "remove_duplicated_term" : true
+                }
+            }
+        }
+    }
+}'
+```
+测试：
+http://localhost:9200/medcl/_analyze?text=%e5%88%98%e5%be%b7%e5%8d%8e&analyzer=pinyin_analyzer
 
 ###IK+pinyin分词配置 5.1创建索引与分析器设置
 创建索引
