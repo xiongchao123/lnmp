@@ -223,3 +223,8 @@ sudo hwclock --localtime --systohc
 //重新进入windows10，发现时间恢复正常了！
 reboot
 ```
+
+###win10分区无法读取问题解决，重新挂载
+```sh
+sudo mount -t ntfs-3g /dev/sda6 /mnt/ -ro force
+```
