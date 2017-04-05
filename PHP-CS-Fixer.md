@@ -82,6 +82,7 @@ return PhpCsFixer\Config::create()
         'no_unreachable_default_argument_value' => true,
         'no_useless_else' => true,
         'no_useless_return' => true,
+        'no_trailing_comma_in_singleline_array' => true, //单行数组最后一个元素不添加逗号
         'ordered_class_elements' => true,
         'ordered_imports' => true,
         'php_unit_strict' => true,
