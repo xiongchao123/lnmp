@@ -114,6 +114,15 @@ xdebug:
 git clone --depth=1 -v https://github.com/xdebug/xdebug.git /tmp/xdebug-ext
 cd /tmp/xdebug-ext && phpize && ./configure --enable-xdebug && sudo make && sudo make install
 ```
+
+mongodb:
+```sh
+git clone --depth=1 -v https://github.com/mongodb/mongo-php-driver.git /tmp/mongodb-ext
+cd /tmp/mongodb-ext
+git submodule sync && git submodule update --init
+phpize && ./configure && make all -j 5 && sudo make install
+```
+
 memcached：
 ```sh
 sudo apt-get install libmemcached-dev
@@ -155,6 +164,7 @@ sudo subl /usr/local/php/etc/php.ini
 912行加入：
 extension=xdebug.so
 extension=memcached.so
+extension=mongodb.so
 extension=phalcon.so
 extension=redis.so
 extension=swoole.so
