@@ -182,3 +182,11 @@ git clone --depth=1 https://github.com/phalcon/phalcon-devtools.git
 ```sh
 git clone --depth=1 https://github.com/eaglewu/swoole-ide-helper
 ```
+
+###symfonycms
+```sh
+[remote "origin"]
+        url = git@git.oschina.net:zhaojianhui/symfonycms.git
+        url = git@git.coding.net:zhaojianhui/symfonyCms.git
+        url = git@github.com:zhaojianhui129/symfonyCms.git
+```

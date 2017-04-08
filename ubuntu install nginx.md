@@ -2,10 +2,10 @@
 
 ###1. 从Nginx官网下载二进制安装包
 ###2.解压
-tar zxvf nginx-1.11.5.tar.gz 
+tar zxvf nginx-1.11.13.tar.gz 
 ###3.编译并安装Nginx
 ```sh
-cd nginx-1.11.5/
+cd nginx-1.11.13/
 sudo apt-get install libpcre3 libpcre3-dev openssl libssl-dev
 ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-http_gzip_static_module
 sudo make && sudo make install
