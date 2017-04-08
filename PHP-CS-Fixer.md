@@ -44,7 +44,7 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer --help
 >Group:`php-cs-fixer over current class`   <br>
 >Description:`Command with --dry-run and --diff`   <br>
 >Program:`/usr/local/php/bin/php`   <br>
->Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose fix "$FileDir$/$FileName$"`   <br>
+>Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose --config="/home/qianxun/website/lnmp/.php_cs" fix "$FileDir$/$FileName$"`   <br>
 >--quiet参数表示不输出
 >Working directory:`$ProjectFileDir$`   <br>
 
@@ -76,7 +76,7 @@ return PhpCsFixer\Config::create()
         'combine_consecutive_unsets' => true,
         // one should use PHPUnit methods to set up expected exception instead of annotations
         'general_phpdoc_annotation_remove' => ['expectedException', 'expectedExceptionMessage', 'expectedExceptionMessageRegExp'],
-        'header_comment' => array('header' => $header),
+        //'header_comment' => ['header' => $header],
         'heredoc_to_nowdoc' => true,
         'no_extra_consecutive_blank_lines' => ['break', 'continue', 'extra', 'return', 'throw', 'use', 'parenthesis_brace_block', 'square_brace_block', 'curly_brace_block'],
         'no_unreachable_default_argument_value' => true,
@@ -166,10 +166,10 @@ source /etc/profile
 
     // Path to where you have the php-cs-fixer installed
     "php_cs_fixer_executable_path": "/usr/local/bin/php-cs-fixer",
-
+/usr/local/bin/php-cs-fixer --quiet --verbose --config="/home/qianxun/website/lnmp/.php_cs" fix "$FileDir$/$FileName$"
     // Additional arguments you can specify into the application
     "php_cs_fixer_additional_args": {
-        "--config":"/home/qianxun/.php_cs"
+        "--config":"/home/qianxun/website/lnmp/.php_cs"
     },
 }
 ```
