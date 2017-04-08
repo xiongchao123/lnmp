@@ -2,7 +2,7 @@
 
 ##命令行使用方式
 ```sh
-sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
+sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.2.1/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
 sudo chmod a+x /usr/local/bin/php-cs-fixer
 #update
 sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer selfupdate
@@ -18,10 +18,10 @@ github地址：https://github.com/FriendsOfPHP/PHP-CS-Fixer
 ####Step 1: 下载并安装工具
 ```sh
 sudo curl -L http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/local/bin/php-cs-fixer
-sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
+sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.2.1/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
 #or
 sudo wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O /usr/local/bin/php-cs-fixer
-sudo wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
+sudo wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.2.1/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
 
 sudo chmod a+x /usr/local/bin/php-cs-fixer
 #update
@@ -116,10 +116,10 @@ Use Sublime Text’s Package Control (Preferences -> Package Control -> Install 
 ###Step 2: 下载php-cs-fixer.phar
 ```sh
 sudo curl -L http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/local/bin/php-cs-fixer
-sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
+sudo curl -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.2.1/php-cs-fixer.phar -o /usr/local/bin/php-cs-fixer
 #or
 sudo wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O /usr/local/bin/php-cs-fixer
-sudo wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.1.1/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
+sudo wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.2.1/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
 
 sudo chmod a+x /usr/local/bin/php-cs-fixer
 #update

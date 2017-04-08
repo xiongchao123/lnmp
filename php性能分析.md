@@ -90,7 +90,7 @@ zend_extension=xdebug.so
 ;开启自动跟踪
 xdebug.auto_trace=1
 ;开启异常跟踪
-xdebug.show_exception_trace=1
+xdebug.show_exception_trace=0
 ;开启远程调试自动启动
 xdebug.remote_autostart=1
 ;开启远程调试
