@@ -83,10 +83,10 @@ cd /tmp/xdebug-ext && phpize && ./configure --enable-xdebug && sudo make && sudo
 sudo subl /usr/local/php/etc/php.ini
 #912行加入：
 #------------------------------------
-extension=xdebug.so
+zend_extension=xdebug.so
 ;xdebug配置
 [Xdebug]
-extension=xdebug.so
+zend_extension=xdebug.so
 ;开启自动跟踪
 xdebug.auto_trace=1
 ;开启异常跟踪

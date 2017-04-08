@@ -162,7 +162,7 @@ cd /tmp/runkit-ext && phpize && ./configure && sudo make && sudo make install
 ```sh
 sudo subl /usr/local/php/etc/php.ini
 912行加入：
-extension=xdebug.so
+zend_extension=xdebug.so
 extension=memcached.so
 extension=mongodb.so
 extension=phalcon.so
