@@ -2,7 +2,7 @@
 
 
 ###一、下载PHP7的最新版源码
-http://php.net/get/php-7.0.12.tar.gz/from/a/mirror
+http://php.net/get/php-7.1.3.tar.gz/from/a/mirror
 ###二、安装相关依赖库
 ```sh
 sudo apt-get update
@@ -25,8 +25,8 @@ sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl 
 ```
 ###三、编译：（编译参数2个中选择一个，第一段大部分机器即可编译，第二段参数推荐64位x86系统编译）
 ```
-tar zxvf php-7.0.12.tar.gz
-cd php-7.0.12/
+tar zxvf php-7.1.3.tar.gz
+cd php-7.1.3/
 #part 1
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www --with-mysqli --with-pdo-mysql --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt --enable-ftp --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --disable-fileinfo --enable-maintainer-zts
 #part 2
