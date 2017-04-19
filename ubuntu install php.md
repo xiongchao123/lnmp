@@ -21,16 +21,24 @@ sudo apt-get install libreadline6 libreadline6-dev autoconf
 ```
 merge
 ```sh
-sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev libfreetype6-dev autoconf -y
+sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libcurl4-openssl-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev libfreetype6-dev autoconf -y
 ```
 ###三、编译：（编译参数2个中选择一个，第一段大部分机器即可编译，第二段参数推荐64位x86系统编译）
+ubuntu 17.4
+```sh
+tar zxvf curl-7.53.1.tar.gz
+cd curl-7.53.1/
+./configure --prefix=/usr/local/curl
+make && sudo make install
+```
+
 ```
 tar zxvf php-7.1.4.tar.gz
 cd php-7.1.4/
 #part 1
-./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www --with-mysqli --with-pdo-mysql --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt --enable-ftp --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --disable-fileinfo --enable-maintainer-zts
-#part 2
-./configure --prefix=/usr/local/php/ --with-config-file-path=/usr/local/php/etc --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-gd -with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-openssl --with-gettext --enable-session --with-mcrypt --with-curl --with-jpeg-dir --with-png-dir --with-freetype-dir --enable-opcache
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www  --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-mysqli --with-pdo-mysql --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt --enable-ftp --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --disable-fileinfo --enable-maintainer-zts --enable-opcache --enable-session
+#ubuntu 17.04
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www  --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-mysqli --with-pdo-mysql --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl=/usr/local/curl --enable-mbregex --enable-mbstring --with-mcrypt --enable-ftp --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --disable-fileinfo --enable-maintainer-zts --enable-opcache --enable-session
 ```
 ###四、执行make 和 sudo make install 安装
 ```sh
@@ -47,18 +55,18 @@ sudo useradd -g www www
 ```
 
 ```sh
-sudo cp /software/php/php.ini-development /usr/local/php/etc/php.ini
+sudo cp ~/下载/php-7.1.4/php.ini-development /usr/local/php/etc/php.ini
 cd /usr/local/php/etc
 sudo cp php-fpm.conf.default php-fpm.conf
 cd /usr/local/php/etc/php-fpm.d
 sudo cp www.conf.default www.conf
 
-sudo gedit /usr/local/php/etc/php-fpm.d/www.conf
+sudo subl /usr/local/php/etc/php-fpm.d/www.conf
 #setting
 user = www
 group = www
 #setting
-sudo gedit /usr/local/php/etc/php-fpm.conf
+sudo subl /usr/local/php/etc/php-fpm.conf
 pid=run/php-fpm.pid
 ```
 
@@ -72,14 +80,14 @@ sudo /usr/local/php/sbin/php-fpm
 ```
 ###7.将编译目录下的文件拷贝只系统目录，这样操作fpm更加方便
 ```sh
-sudo cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+sudo cp ~/下载/php-7.1.4/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 sudo chmod +x /etc/init.d/php-fpm
 #启动
 sudo systemctl start php-fpm
 #开机启动
 sudo systemctl enable php-fpm.service
 #更改相应选项
-vi /etc/php.ini
+sudo subl /usr/local/php/etc/php.ini
 	disable_functions = passthru,exec,system,chroot,scandir,chgrp,chown,shell_exec,proc_open,proc_get_status,ini_alter,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server,escapeshellcmd,dll,popen,disk_free_space,checkdnsrr,checkdnsrr,getservbyname,getservbyport,disk_total_space,posix_ctermid,posix_get_last_error,posix_getcwd, posix_getegid,posix_geteuid,posix_getgid, posix_getgrgid,posix_getgrnam,posix_getgroups,posix_getlogin,posix_getpgid,posix_getpgrp,posix_getpid, posix_getppid,posix_getpwnam,posix_getpwuid, posix_getrlimit, posix_getsid,posix_getuid,posix_isatty, posix_kill,posix_mkfifo,posix_setegid,posix_seteuid,posix_setgid, posix_setpgid,posix_setsid,posix_setuid,posix_strerror,posix_times,posix_ttyname,posix_uname
 	date.timezone=PRC
 	#短标记语法
@@ -125,7 +133,7 @@ phpize && ./configure && make all -j 5 && sudo make install
 
 memcached：
 ```sh
-sudo apt-get install libmemcached-dev
+sudo apt-get install libmemcached-dev -y
 git clone --depth=1 -v https://github.com/php-memcached-dev/php-memcached.git /tmp/memcached-ext
 cd /tmp/memcached-ext && phpize && ./configure && sudo make && sudo make install
 ```
@@ -137,7 +145,7 @@ phalcon:
 
 ```sh
 git clone --depth=1 -v https://github.com/phalcon/cphalcon.git /tmp/phalcon-ext
-sudo gedit /tmp/phalcon-ext/build/install
+sudo subl /tmp/phalcon-ext/build/install
 cd /tmp/phalcon-ext/build && sudo ./install
 ```
 

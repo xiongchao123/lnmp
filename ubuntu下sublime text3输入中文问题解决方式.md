@@ -111,14 +111,14 @@ gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags 
 # 拷贝文件
 sudo cp libsublime-imfix.so /opt/sublime_text/
 ```
-修改文件sudo gedit /usr/bin/subl，将文件内容替换成下面的代码：
+修改文件sudo subl /usr/bin/subl，将文件内容替换成下面的代码：
 ```sh
 #!/bin/sh
 LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so exec /opt/sublime_text/sublime_text "$@"
 ```
 修改之后，通过命令行执行subl启动sublime text，已经可以输入中文了。为了使用鼠标右键打开文件时能够使用中文输入，还需要修改文件sublime_text.desktop的内容。使用下面的内容替换：
 ```sh
-sudo gedit /usr/share/applications/sublime_text.desktop
+sudo subl /usr/share/applications/sublime_text.desktop
 ```
 
 ```sh
