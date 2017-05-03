@@ -190,3 +190,11 @@ git clone --depth=1 https://github.com/eaglewu/swoole-ide-helper
         url = git@git.coding.net:zhaojianhui/symfonyCms.git
         url = git@github.com:zhaojianhui129/symfonyCms.git
 ```
+
+###swooleWechat微信项目
+```sh
+[remote "origin"]
+    url = git@git.oschina.net:zhaojianhui/swoolewechat.git
+    url = git@git.coding.net:zhaojianhui/swooleWechat.git
+    url = git@github.com:zhaojianhui129/swooleWechat.git
+```
