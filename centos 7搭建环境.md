@@ -126,6 +126,8 @@ vi /data/software/phalcon-ext/build/install
 #由于安装问题需要替换掉源码包中php的某些路径：
 phpize  >>  /usr/local/php/bin/phpize
 php-config  >>  /usr/local/php/bin/php-config
+#如果提示You will need re2c 0.13.4，则执行如下代码
+yum -y install re2c
 
 cd /data/software/phalcon-ext/build && ./install
 ```
@@ -144,7 +146,7 @@ cd /data/software/swoole-ext && phpize && ./configure && make && make install
 
 runkit:
 ```sh
-git clone --depth=1 -v git@github.com:runkit7/runkit7.git /data/software/runkit-ext
+git clone --depth=1 -v https://github.com/runkit7/runkit7.git /data/software/runkit-ext
 cd /data/software/runkit-ext && phpize && ./configure && make && make install
 ```
 
