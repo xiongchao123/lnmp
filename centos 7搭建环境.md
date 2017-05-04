@@ -126,7 +126,7 @@ vi /data/software/phalcon-ext/build/install
 #由于安装问题需要替换掉源码包中php的某些路径：
 phpize  >>  /usr/local/php/bin/phpize
 php-config  >>  /usr/local/php/bin/php-config
-#如果提示You will need re2c 0.13.4，则执行如下代码
+#如果提示You will need re2c 0.13.4，则执行
 yum -y install re2c
 
 cd /data/software/phalcon-ext/build && ./install
