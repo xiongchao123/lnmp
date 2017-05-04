@@ -86,7 +86,6 @@ sudo subl /usr/local/php/etc/php.ini
 zend_extension=xdebug.so
 ;xdebug配置
 [Xdebug]
-zend_extension=xdebug.so
 ;开启自动跟踪
 xdebug.auto_trace=1
 ;开启异常跟踪
