@@ -129,7 +129,7 @@ php-config  >>  /usr/local/php/bin/php-config
 #如果提示You will need re2c 0.13.4，则执行
 yum -y install re2c
 
-cd /data/software/phalcon-ext/build && ./install
+cd /data/software/phalcon-ext/build && sudo ./install
 ```
 
 phpredis:
