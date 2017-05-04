@@ -163,8 +163,8 @@ cd /tmp/swoole-ext && phpize && ./configure && sudo make && sudo make install
 
 runkit:
 ```sh
-git clone --depth=1 -v git@github.com:runkit7/runkit7.git /tmp/runkit-ext
-cd /tmp/runkit-ext && phpize && ./configure && sudo make && sudo make install
+git clone --depth=1 -v https://github.com/runkit7/runkit7.git /data/software/runkit-ext
+cd /data/software/runkit-ext && phpize && ./configure && make && make install
 ```
 
 ```sh
