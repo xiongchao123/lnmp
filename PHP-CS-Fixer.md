@@ -40,14 +40,23 @@ sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer selfupdate
 sudo /usr/local/php/bin/php /usr/local/bin/php-cs-fixer --help
 ```
 
+LINUX:
 >Name:`Php-cs-fixer`   <br>
 >Group:`php-cs-fixer over current class`   <br>
 >Description:`Command with --dry-run and --diff`   <br>
 >Program:`/usr/local/php/bin/php`   <br>
->Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose --config="/home/qianxun/website/lnmp/.php_cs" fix "$FileDir$/$FileName$"`   <br>
+>Parameters:`/usr/local/bin/php-cs-fixer --quiet --verbose --config=/home/qianxun/website/lnmp/.php_cs fix "$FileDir$/$FileName$"`   <br>
 >--quiet参数表示不输出
 >Working directory:`$ProjectFileDir$`   <br>
 
+WINDOWS:
+>Name:`Php-cs-fixer`   <br>
+>Group:`php-cs-fixer over current class`   <br>
+>Description:`Command with --dry-run and --diff`   <br>
+>Program:`D:\php-7.1.5-Win32-VC14-x64\php.exe`   <br>
+>Parameters:`D:\php-cs-fixer\php-cs-fixer.phar --quiet --verbose --config=D:\website\lnmp\.php_cs fix "$FileDir$\$FileName$"`   <br>
+>--quiet参数表示不输出
+>Working directory:`$ProjectFileDir$`   <br>
 
 ####Step 3: 设置快捷键
 再次导航到：`Settings/Preferences` 找到`Keymap`项，搜索`php-cs-fixer`,找到后右键添加快捷键。
