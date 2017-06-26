@@ -27,9 +27,9 @@ make && make install
 
 curl
 ```sh
-wget https://curl.haxx.se/download/curl-7.54.0.tar.gz
-tar zxvf curl-7.54.0.tar.gz
-cd curl-7.54.0/
+wget https://curl.haxx.se/download/curl-7.54.1.tar.gz
+tar zxvf curl-7.54.1.tar.gz
+cd curl-7.54.1/
 ./configure --prefix=/usr/local/curl
 make && make install
 ```
