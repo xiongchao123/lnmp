@@ -53,7 +53,7 @@ WINDOWS:
 >Name:`Php-cs-fixer`   <br>
 >Group:`php-cs-fixer over current class`   <br>
 >Description:`Command with --dry-run and --diff`   <br>
->Program:`D:\php-7.1.5-Win32-VC14-x64\php.exe`   <br>
+>Program:`D:\php-7.1.6-Win32-VC14-x64\php.exe`   <br>
 >Parameters:`D:\php-cs-fixer\php-cs-fixer.phar --quiet --verbose --config=D:\website\lnmp\.php_cs fix "$FileDir$\$FileName$"`   <br>
 >--quiet参数表示不输出
 >Working directory:`$ProjectFileDir$`   <br>
