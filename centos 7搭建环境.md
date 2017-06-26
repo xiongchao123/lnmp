@@ -39,9 +39,9 @@ php
 
 yum -y install gcc gcc-c++ make autoconf automake ncurses-devel zlib-devel libxml2-devel libcurl-devel libpng-devel libmcrypt perl iconv libjpeg libjpeg-devel libpng libpng-devel libpng10 libpng10-devel gd gd-devel freetype freetype-devel xmlrpc curl openssl openssl-devel unzip
 
-wget http://cn.php.net/distributions/php-7.1.4.tar.gz
-tar zxvf php-7.1.4.tar.gz
-cd php-7.1.4
+wget http://cn.php.net/distributions/php-7.1.6.tar.gz
+tar zxvf php-7.1.6.tar.gz
+cd php-7.1.6
 
 ./configure --prefix=/usr/local/php/ --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-gd -with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-openssl --with-gettext --enable-session --with-mcrypt=/usr/local/libmcrypt --with-curl --with-jpeg-dir --with-png-dir --with-freetype-dir --enable-opcache
 make && make install
@@ -49,7 +49,7 @@ make && make install
 echo "export PATH=/usr/local/php/bin:$PATH" >> /etc/profile
 #
 source /etc/profile
-cp /data/software/php-7.1.4/php.ini-development /usr/local/php/etc/php.ini
+cp /data/software/php-7.1.6/php.ini-development /usr/local/php/etc/php.ini
 cd /usr/local/php/etc
 cp php-fpm.conf.default php-fpm.conf
 cd /usr/local/php/etc/php-fpm.d
@@ -63,7 +63,7 @@ vi /usr/local/php/etc/php-fpm.conf
 pid=run/php-fpm.pid
 
 /usr/local/php/sbin/php-fpm
-cp /data/software/php-7.1.4/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+cp /data/software/php-7.1.6/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 chmod +x /etc/init.d/php-fpm
 #启动
 systemctl start php-fpm
@@ -184,9 +184,9 @@ composer config repo.packagist composer https://packagist.phpcomposer.com
 
 nginx
 ```sh
-wget http://nginx.org/download/nginx-1.13.0.tar.gz
-tar zxvf nginx-1.13.0.tar.gz 
-cd nginx-1.13.0/
+wget http://nginx.org/download/nginx-1.13.1.tar.gz
+tar zxvf nginx-1.13.1.tar.gz 
+cd nginx-1.13.1/
 yum install -y libpcre3 libpcre3-dev openssl libssl-dev
 ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-http_gzip_static_module
 make && make install
