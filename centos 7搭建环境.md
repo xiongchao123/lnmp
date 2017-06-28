@@ -10,9 +10,10 @@ useradd -g www -s /sbin/nologin -M www
 libmcrypt
 ```sh
 #使用wget可以通过以下路径下载
-wget ftp://mcrypt.hellug.gr/pub/crypto/mcrypt/attic/libmcrypt/libmcrypt-2.5.7.tar.gz
+wget ftp://mcrypt.hellug.gr/pub/crypto/mcrypt/attic/libmcrypt/libmcrypt-2.5.7.tar.gz -O /data/software/libmcrypt-2.5.7.tar.gz
  
 #解压
+cd /data/software/
 tar -zxvf libmcrypt-2.5.7.tar.gz 
  
 #进入目录
@@ -27,7 +28,8 @@ make && make install
 
 curl
 ```sh
-wget https://curl.haxx.se/download/curl-7.54.1.tar.gz
+wget https://curl.haxx.se/download/curl-7.54.1.tar.gz -O /data/software/curl-7.54.1.tar.gz
+cd /data/software/
 tar zxvf curl-7.54.1.tar.gz
 cd curl-7.54.1/
 ./configure --prefix=/usr/local/curl
@@ -39,7 +41,8 @@ php
 
 yum -y install gcc gcc-c++ make autoconf automake ncurses-devel zlib-devel libxml2-devel libcurl-devel libpng-devel libmcrypt perl iconv libjpeg libjpeg-devel libpng libpng-devel libpng10 libpng10-devel gd gd-devel freetype freetype-devel xmlrpc curl openssl openssl-devel unzip
 
-wget http://cn.php.net/distributions/php-7.1.6.tar.gz
+wget http://cn.php.net/distributions/php-7.1.6.tar.gz -O php-7.1.6.tar.gz
+cd /data/software/
 tar zxvf php-7.1.6.tar.gz
 cd php-7.1.6
 
@@ -119,6 +122,12 @@ cd /data/software/memcached-ext && phpize && ./configure --with-libmemcached-dir
 ```
 
 phalcon:
+#如果提示You will need re2c 0.13.4，则执行
+```sh
+wget https://github.com/skvadrik/re2c/releases/download/0.16/re2c-0.16.tar.gz -O /data/software/re2c-0.16.tar.gz 
+./configure && make && make install
+```
+
 克隆后替换部分字符：
 ```sh
 git clone --depth=1 -v https://github.com/phalcon/cphalcon.git /data/software/phalcon-ext
@@ -127,7 +136,7 @@ vi /data/software/phalcon-ext/build/install
 phpize  >>  /usr/local/php/bin/phpize
 php-config  >>  /usr/local/php/bin/php-config
 #如果提示You will need re2c 0.13.4，则执行
-yum -y install re2c
+#yum -y install re2c
 
 cd /data/software/phalcon-ext/build && sudo ./install
 ```
@@ -184,9 +193,9 @@ composer config repo.packagist composer https://packagist.phpcomposer.com
 
 nginx
 ```sh
-wget http://nginx.org/download/nginx-1.13.1.tar.gz
-tar zxvf nginx-1.13.1.tar.gz 
-cd nginx-1.13.1/
+wget http://nginx.org/download/nginx-1.13.2.tar.gz
+tar zxvf nginx-1.13.2.tar.gz 
+cd nginx-1.13.2/
 yum install -y libpcre3 libpcre3-dev openssl libssl-dev
 ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-http_gzip_static_module
 make && make install
