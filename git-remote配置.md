@@ -198,3 +198,11 @@ git clone --depth=1 https://github.com/eaglewu/swoole-ide-helper
     url = git@git.coding.net:zhaojianhui/swooleWechat.git
     url = git@github.com:zhaojianhui129/swooleWechat.git
 ```
+
+###asset
+```sh
+[remote "origin"]
+    url = git@gitee.com:zhaojianhui/asset.git
+    url = git@git.coding.net:zhaojianhui/asset.git
+    url = git@github.com:zhaojianhui129/asset.git
+```

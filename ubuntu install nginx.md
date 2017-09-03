@@ -32,6 +32,7 @@ include ./vhosts/*.conf;
 ###7.
 ```sh
 /usr/local/nginx/sbin/nginx -h
+sudo /usr/local/nginx/sbin/nginx
 sudo /usr/local/nginx/sbin/nginx -s stop
 sudo /usr/local/nginx/sbin/nginx -s quit
 sudo /usr/local/nginx/sbin/nginx -s reopen

@@ -15,12 +15,13 @@ https://www.oschina.net/question/54100_28161
 
 ###源码安装
 ```sh
-tar -xJf ./node-v7.7.4-linux-x64.tar.xz
-sudo mv node-v7.7.4-linux-x64/ /usr/local/
+wget https://nodejs.org/dist/v8.4.0/node-v8.4.0-linux-x64.tar.xz
+tar -xJf ./node-v8.4.0-linux-x64.tar.xz
+sudo mv node-v8.4.0-linux-x64/ /usr/local/
 #使用命令 sudo gedit /etc/profile 打开配置文件，在文件最后中添加如下两行：
 #nodejs
-export PATH="/usr/local/node-v7.7.4-linux-x64/bin:$PATH"
-export NODE_PATH="/usr/local/node-v7.7.4-linux-x64/lib/node_modules"
+export PATH="/usr/local/node-v8.4.0-linux-x64/bin:$PATH"
+export NODE_PATH="/usr/local/node-v8.4.0-linux-x64/lib/node_modules"
 ##重启机器或
 source /etc/profile
 ```
