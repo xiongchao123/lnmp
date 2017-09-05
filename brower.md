@@ -11,5 +11,6 @@ sudo ln -s /usr/local/node/bin/npm /usr/local/bin/npm
 node -v
 npm -v
 sudo npm install -g bower
+sudo ln -s /usr/local/node/bin/bower /usr/local/bin/bower
 bower --version
 ```
