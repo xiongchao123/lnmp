@@ -206,3 +206,12 @@ git clone --depth=1 https://github.com/eaglewu/swoole-ide-helper
     url = git@git.coding.net:zhaojianhui/asset.git
     url = git@github.com:zhaojianhui129/asset.git
 ```
+
+
+###
+```
+[remote "origin"]
+    url = git@gitee.com:zhaojianhui/laravelWechat.git
+    url = git@github.com:zhaojianhui129/laravelWechat.git
+    url = git@git.coding.net:zhaojianhui/laravelWechat.git
+```
