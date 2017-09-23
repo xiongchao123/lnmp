@@ -73,7 +73,7 @@
 ###lnmp:
 ```sh
 [remote "origin"]
-        url = git@git.oschina.net:zhaojianhui/lnmp.git
+        url = git@gitee.com:zhaojianhui/lnmp.git
         url = git@git.coding.net:zhaojianhui/lnmp.git
         url = git@github.com:zhaojianhui129/lnmp.git
 ```
