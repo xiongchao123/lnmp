@@ -28,10 +28,10 @@ make && make install
 
 curl
 ```sh
-wget https://curl.haxx.se/download/curl-7.54.1.tar.gz -O /data/software/curl-7.54.1.tar.gz
+wget https://curl.haxx.se/download/curl-7.55.1.tar.gz -O /data/software/curl-7.55.1.tar.gz
 cd /data/software/
-tar zxvf curl-7.54.1.tar.gz
-cd curl-7.54.1/
+tar zxvf curl-7.55.1.tar.gz
+cd curl-7.55.1/
 ./configure --prefix=/usr/local/curl
 make && make install
 ```
@@ -41,10 +41,10 @@ php
 
 yum -y install gcc gcc-c++ make autoconf automake ncurses-devel zlib-devel libxml2-devel libcurl-devel libpng-devel libmcrypt perl iconv libjpeg libjpeg-devel libpng libpng-devel libpng10 libpng10-devel gd gd-devel freetype freetype-devel xmlrpc curl openssl openssl-devel unzip
 
-wget http://cn.php.net/distributions/php-7.1.6.tar.gz -O php-7.1.6.tar.gz
+wget http://cn.php.net/distributions/php-7.1.9.tar.gz -O php-7.1.9.tar.gz
 cd /data/software/
-tar zxvf php-7.1.6.tar.gz
-cd php-7.1.6
+tar zxvf php-7.1.9.tar.gz
+cd php-7.1.9
 
 ./configure --prefix=/usr/local/php/ --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-gd -with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-openssl --with-gettext --enable-session --with-mcrypt=/usr/local/libmcrypt --with-curl --with-jpeg-dir --with-png-dir --with-freetype-dir --enable-opcache
 make && make install
@@ -52,7 +52,7 @@ make && make install
 echo "export PATH=/usr/local/php/bin:$PATH" >> /etc/profile
 #
 source /etc/profile
-cp /data/software/php-7.1.6/php.ini-development /usr/local/php/etc/php.ini
+cp /data/software/php-7.1.9/php.ini-development /usr/local/php/etc/php.ini
 cd /usr/local/php/etc
 cp php-fpm.conf.default php-fpm.conf
 cd /usr/local/php/etc/php-fpm.d
@@ -66,7 +66,7 @@ vi /usr/local/php/etc/php-fpm.conf
 pid=run/php-fpm.pid
 
 /usr/local/php/sbin/php-fpm
-cp /data/software/php-7.1.6/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+cp /data/software/php-7.1.9/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 chmod +x /etc/init.d/php-fpm
 #启动
 systemctl start php-fpm
@@ -193,9 +193,9 @@ composer config repo.packagist composer https://packagist.phpcomposer.com
 
 nginx
 ```sh
-wget http://nginx.org/download/nginx-1.13.2.tar.gz
-tar zxvf nginx-1.13.2.tar.gz 
-cd nginx-1.13.2/
+wget http://nginx.org/download/nginx-1.13.5.tar.gz
+tar zxvf nginx-1.13.5.tar.gz 
+cd nginx-1.13.5/
 yum install -y libpcre3 libpcre3-dev openssl libssl-dev
 ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-http_gzip_static_module
 make && make install
@@ -209,7 +209,7 @@ include ./vhosts/*.conf;
 
 mkdir -p /usr/local/nginx/conf/vhosts/
 cp /mnt/hgfs/website/lnmp/nginx/vhosts/suofeiya_wx.conf /usr/local/nginx/conf/vhosts/
-
+cp /mnt/hgfs/website/lnmp/nginx/vhosts/suofeiya_wxmini.conf /usr/local/nginx/conf/vhosts/
 ```
 
 ###7.
