@@ -220,3 +220,17 @@ cp /mnt/hgfs/website/lnmp/nginx/vhosts/suofeiya_wxmini.conf /usr/local/nginx/con
 /usr/local/nginx/sbin/nginx -s reopen
 /usr/local/nginx/sbin/nginx -s reload
 ```
+
+
+
+####开启防火墙
+```sh
+firewall-cmd --permanent --zone=public --add-service=http
+firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --permanent --zone=public --add-service=mysql
+firewall-cmd --reload
+```
+####重启防火墙使配置生效
+```sh
+service iptables restart
+```

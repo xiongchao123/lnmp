@@ -18,10 +18,10 @@ $ yum install net-tools -y
 ```sh
 $ mkdir /mnt/cdrom/
 $ mount /dev/cdrom /mnt/cdrom
-$ cp /mnt/cdrom/VMwareTools-10.1.6-5214329.tar.gz ~/
+$ cp /mnt/cdrom/VMwareTools-10.1.15-6627299.tar.gz ~/
 $ umount /dev/cdrom
 $ cd ~/
-$ tar zxvf VMwareTools-10.1.6-5214329.tar.gz
+$ tar zxvf VMwareTools-10.1.15-6627299.tar.gz
 $ cd vmware-tools-distrib/
 $ ./vmware-install.pl -d
 ```
