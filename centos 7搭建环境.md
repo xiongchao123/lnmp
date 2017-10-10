@@ -41,7 +41,7 @@ php
 
 yum -y install gcc gcc-c++ make autoconf automake ncurses-devel zlib-devel libxml2-devel libcurl-devel libpng-devel libmcrypt perl iconv libjpeg libjpeg-devel libpng libpng-devel libpng10 libpng10-devel gd gd-devel freetype freetype-devel xmlrpc curl openssl openssl-devel unzip
 
-wget http://cn.php.net/distributions/php-7.1.9.tar.gz -O php-7.1.9.tar.gz
+wget http://cn.php.net/distributions/php-7.1.9.tar.gz -O /data/software/php-7.1.9.tar.gz
 cd /data/software/
 tar zxvf php-7.1.9.tar.gz
 cd php-7.1.9
@@ -84,6 +84,48 @@ systemctl restart php-fpm
 cd /data/software/
 yum install git -y
 ```
+
+php5
+```sh
+
+yum -y install gcc gcc-c++ make autoconf automake ncurses-devel zlib-devel libxml2-devel libcurl-devel libpng-devel libmcrypt perl iconv libjpeg libjpeg-devel libpng libpng-devel libpng10 libpng10-devel gd gd-devel freetype freetype-devel xmlrpc curl openssl openssl-devel unzip
+
+wget http://cn.php.net/distributions/php-5.6.31.tar.gz -O /data/software/php-5.6.31.tar.gz
+cd /data/software/
+tar zxvf php-5.6.31.tar.gz
+cd php-5.6.31
+
+./configure --prefix=/usr/local/php5/ --with-config-file-path=/usr/local/php5/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www --with-mysql=/usr/local/mysql --with-mysqli=/usr/local/mysql/bin/mysql_config --with-mysql-sock=/tmp/mysql.sock --with-pdo-mysql=/usr/local/mysql --with-gd -with-iconv --with-zlib --enable-xml --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --enable-mbregex --enable-fpm --enable-mbstring --enable-ftp --enable-gd-native-ttf --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --with-pear --with-openssl --with-gettext --enable-session --with-mcrypt --with-curl --with-jpeg-dir --with-png-dir --with-freetype-dir --enable-opcache
+make && make install
+
+#echo "export PATH=/usr/local/php/bin:$PATH" >> /etc/profile
+#
+#source /etc/profile
+cp /data/software/php-5.6.31/php.ini-development /usr/local/php5/etc/php.ini
+cp /usr/local/php5/etc/php-fpm.conf.default /usr/local/php5/etc/php-fpm.conf
+#修改端口
+vi /usr/local/php5/etc/php-fpm.conf
+    listen = 127.0.0.1:9001
+    user=www    #设置php-fpm运行账号为www
+    group=www   #设置php-fpm运行组为www
+    pid=run/php-fpm.pid #取消前面的分号
+
+
+cp /data/software/php-5.6.31/sapi/fpm/init.d.php-fpm /etc/init.d/php5-fpm
+chmod +x /etc/init.d/php5-fpm
+#启动
+systemctl start php5-fpm
+#开机启动
+systemctl enable php5-fpm.service
+#更改相应选项
+vi /usr/local/php5/etc/php.ini
+    date.timezone=PRC
+    #短标记语法
+    expose_php=Off
+#记得启动php-fpm服务
+systemctl restart php5-fpm
+```
+
 
 htop:
 ```sh
