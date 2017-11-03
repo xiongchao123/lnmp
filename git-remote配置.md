@@ -208,7 +208,7 @@ git clone --depth=1 https://github.com/eaglewu/swoole-ide-helper
 ```
 
 
-###
+###laravelWechat
 ```
 [remote "origin"]
     url = git@gitee.com:zhaojianhui/laravelWechat.git
