@@ -2,7 +2,7 @@
 
 
 ###一、下载PHP7的最新版源码
-http://php.net/get/php-7.1.4.tar.gz/from/a/mirror
+http://php.net/get/php-7.1.11.tar.gz/from/a/mirror
 ###二、安装相关依赖库
 ```sh
 sudo apt-get update
@@ -23,18 +23,31 @@ merge
 ```sh
 sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libcurl4-openssl-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev libfreetype6-dev autoconf -y
 ```
+
+###ubuntu 17.10
+```
+sudo apt-get update && sudo apt-get install libxml2-dev build-essential openssl libssl-dev make curl libcurl4-gnutls-dev libcurl4-openssl-dev libjpeg-dev libpng-dev libmcrypt-dev libreadline6 libreadline6-dev libfreetype6-dev autoconf -y
+
+sudo ln -s /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib
+
+```
+
 ###三、编译：（编译参数2个中选择一个，第一段大部分机器即可编译，第二段参数推荐64位x86系统编译）
 ubuntu 17.4
 ```sh
-tar zxvf curl-7.53.1.tar.gz
-cd curl-7.53.1/
-./configure --prefix=/usr/local/curl
+sudo wget https://curl.haxx.se/download/curl-7.56.1.tar.gz -O /data/software/curl-7.56.1.tar.gz
+cd /data/software/
+sudo tar zxvf curl-7.56.1.tar.gz
+cd curl-7.56.1/
+sudo ./configure --prefix=/usr/local/curl
 make && sudo make install
 ```
 
 ```
-tar zxvf php-7.1.4.tar.gz
-cd php-7.1.4/
+sudo wget http://cn.php.net/distributions/php-7.1.11.tar.gz -O /data/software/php-7.1.11.tar.gz
+cd /data/software/
+sudo tar zxvf php-7.1.11.tar.gz
+cd php-7.1.11
 #part 1
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-user=www --with-fpm-group=www  --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-mysqli --with-pdo-mysql --with-iconv-dir --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --disable-rpath --enable-bcmath --enable-shmop --enable-sysvsem --enable-inline-optimization --with-curl --enable-mbregex --enable-mbstring --with-mcrypt --enable-ftp --with-gd --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl --enable-sockets --with-xmlrpc --enable-zip --enable-soap --without-pear --with-gettext --disable-fileinfo --enable-maintainer-zts --enable-opcache --enable-session
 #ubuntu 17.04
@@ -55,18 +68,19 @@ sudo useradd -g www www
 ```
 
 ```sh
-sudo cp ~/下载/php-7.1.4/php.ini-development /usr/local/php/etc/php.ini
+sudo cp /data/software/php-7.1.11/php.ini-development /usr/local/php/etc/php.ini
+
 cd /usr/local/php/etc
 sudo cp php-fpm.conf.default php-fpm.conf
 cd /usr/local/php/etc/php-fpm.d
 sudo cp www.conf.default www.conf
 
-sudo subl /usr/local/php/etc/php-fpm.d/www.conf
+sudo gedit /usr/local/php/etc/php-fpm.d/www.conf
 #setting
 user = www
 group = www
 #setting
-sudo subl /usr/local/php/etc/php-fpm.conf
+sudo gedit /usr/local/php/etc/php-fpm.conf
 pid=run/php-fpm.pid
 ```
 
@@ -80,7 +94,7 @@ sudo /usr/local/php/sbin/php-fpm
 ```
 ###7.将编译目录下的文件拷贝只系统目录，这样操作fpm更加方便
 ```sh
-sudo cp ~/下载/php-7.1.4/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+sudo cp /data/software/php-7.1.11/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 sudo chmod +x /etc/init.d/php-fpm
 #启动
 sudo systemctl start php-fpm
@@ -168,7 +182,7 @@ cd /tmp/runkit-ext && phpize && ./configure && sudo make && sudo make install
 ```
 
 ```sh
-sudo subl /usr/local/php/etc/php.ini
+sudo gedit /usr/local/php/etc/php.ini
 912行加入：
 zend_extension=xdebug.so
 extension=memcached.so

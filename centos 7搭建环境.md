@@ -28,10 +28,10 @@ make && make install
 
 curl
 ```sh
-wget https://curl.haxx.se/download/curl-7.55.1.tar.gz -O /data/software/curl-7.55.1.tar.gz
+wget https://curl.haxx.se/download/curl-7.56.1.tar.gz -O /data/software/curl-7.56.1.tar.gz
 cd /data/software/
-tar zxvf curl-7.55.1.tar.gz
-cd curl-7.55.1/
+tar zxvf curl-7.56.1.tar.gz
+cd curl-7.56.1/
 ./configure --prefix=/usr/local/curl
 make && make install
 ```
@@ -235,9 +235,9 @@ composer config repo.packagist composer https://packagist.phpcomposer.com
 
 nginx
 ```sh
-wget http://nginx.org/download/nginx-1.13.5.tar.gz
-tar zxvf nginx-1.13.5.tar.gz 
-cd nginx-1.13.5/
+wget http://nginx.org/download/nginx-1.13.6.tar.gz
+tar zxvf nginx-1.13.6.tar.gz 
+cd nginx-1.13.6/
 yum install -y libpcre3 libpcre3-dev openssl libssl-dev
 ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-http_gzip_static_module
 make && make install
