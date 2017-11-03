@@ -13,7 +13,7 @@ cd nginx-1.13.6/
 sudo groupadd www
 sudo useradd -g www www
 sudo apt-get install libpcre3 libpcre3-dev openssl libssl-dev
-./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-http_gzip_static_module
+sudo ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_realip_module --with-http_gzip_static_module
 sudo make && sudo make install
 ```
 ###4.启动Nginx
