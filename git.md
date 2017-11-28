@@ -64,6 +64,13 @@ git branch branch_name
 git push origin branch_name_a:branch_name_b
 ```
 
+###删除分支
+```
+git branch -d <branchName>
+git push origin --delete <branchName>
+git push origin --delete tag <tagname>
+```
+
 ###SSH Key
 http://git.oschina.net/oschina/git-osc/wikis/%E5%B8%AE%E5%8A%A9#ssh-keys
 http://www.ithao123.cn/content-1584888.html
